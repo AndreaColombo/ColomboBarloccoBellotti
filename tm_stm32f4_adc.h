@@ -92,10 +92,11 @@ CHANNEL   ADC1   ADC2   ADC3
 @endverbatim
  */
 #include "stm32f4xx.h"
+#include <stm32f407xx.h>
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_adc.h"
-#include "defines.h"
+#include "registers.h"
 #include "tm_stm32f4_gpio.h"
 
 /**
