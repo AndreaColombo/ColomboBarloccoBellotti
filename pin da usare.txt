@@ -1,0 +1,1 @@
+PC1 per il filo rosso del fotodiodo che va in un qualsiasi adc (scegliamo noi quale usare 1 2 o 3)
