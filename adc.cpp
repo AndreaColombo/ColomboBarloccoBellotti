@@ -10,7 +10,7 @@ Adc::Adc(){
 	
 	ADC1->CR1 = 1<<3;
 	ADC1->CR1 |= 1<<1;
-	ADC1->CR1 |= 1<<0;
+	ADC1->CR1 |= 1<<1;
 	ADC1->CR2 |= ADC_CR2_ADON;
 	
 	GPIOC->MODER |= 1<<2;
@@ -25,10 +25,11 @@ void Adc::init(){
 void Adc::start(){
 	//cr1 bit 8 scan
 	//cr2 bit 30 start
+	ADC1->CR1 = 1<<8;
 	ADC1->CR2 = 1<<30;
 }
 
 int Adc::read(){
-	while ((ADC1->SR & 1<<1)==0);
+	//while ((ADC1->SR & 1<<1)==0);
 	return (int) ADC1->DR;
 }
