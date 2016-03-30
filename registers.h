@@ -100,7 +100,7 @@ typedef struct
  * This peripheral controls all interrupts in the microcontroller
  */
 
-typedef struc
+typedef struct
 {
    volatile uint32_t ISER[8];
 } NVIC_Type;

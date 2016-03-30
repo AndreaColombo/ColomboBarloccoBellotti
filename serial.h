@@ -8,6 +8,7 @@ public:
 	SerialPort();
 
 	void write(const char *s);
+	void writeN(const int n);
 };
 
 #endif //SERIAL_H

@@ -18,6 +18,7 @@ SerialPort::SerialPort()
 	USART2->CR1 |= USART_CR1_TE;
 }
 
+
 void SerialPort::write(const char *str)
 {
 	while((*str)!='\0')

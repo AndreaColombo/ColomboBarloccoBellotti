@@ -8,7 +8,7 @@ public:
 	
 	void init();
 	void start();
-	int read();
+	short read();
 	
 };
 

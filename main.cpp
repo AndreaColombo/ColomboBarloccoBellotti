@@ -12,16 +12,20 @@ void delay() {
 SerialPort serial;
 Adc adc;
 
-int main()
-{
+int main(){
+	
+	adc.init();
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
 	GPIOD->MODER |= 1<<28;
-	serial.write ("Hello \n");
+	serial.write ("Hello\n");
 	for(;;){
 		adc.start();
-		int n = adc.read();
-		serial.write((char*)n);
-		serial.write ("Hello \n");
+		serial.write("prima del read\n");
+		delay();
+		short n = 0;
+		n = adc.read();
+		serial.write("Dopo KODIO\n");
+		if (n){serial.write("HO TROVATO QUALCOSA KODIO");}
 		GPIOD->BSRR = 1<<14;
 		delay();
 	}
